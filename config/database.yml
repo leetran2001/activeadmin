@@ -81,5 +81,11 @@ test:
 production:
   <<: *default
   database: activeadmin_production
-  username: activeadmin
-  password: <%= ENV['ACTIVEADMIN_DATABASE_PASSWORD'] %>
+  username: activeadmin_pro
+  password: lee567 #<%= ENV['ACTIVEADMIN_DATABASE_PASSWORD'] %>
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
